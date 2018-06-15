@@ -2,10 +2,7 @@ package ru.spbu.dao;
 
 import ru.spbu.models.Calculation;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,4 +51,14 @@ public class CalculationHistoryDao implements Dao<Calculation> {
         return history;
     }
 
+    public void saveCalculationForUser(String expression, double result, int id) throws SQLException, ClassNotFoundException {
+        Connection connection = ConnectionManager.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into calculation_history (expression, result, user_id, time) values (?, ?, ?, ?)");
+        preparedStatement.setString(1, expression);
+        preparedStatement.setDouble(2, result);
+        preparedStatement.setInt(3, id);
+        preparedStatement.setDate(4, new Date(System.currentTimeMillis()));
+
+        preparedStatement.execute();
+    }
 }

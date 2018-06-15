@@ -14,5 +14,14 @@
     <input type="submit" value="show history">
 </form>
 
+<%
+    String expression = request.getParameter("expression");
+
+    if (expression != null) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/calculationResult");
+        requestDispatcher.forward(request, response);
+    }
+%>
+
 </body>
 </html>

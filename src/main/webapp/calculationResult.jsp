@@ -4,7 +4,8 @@
     <title>Your result</title>
 </head>
 <body>
-<p><%=request.getParameter("expression")%>
+<p><%=request.getAttribute("result")%>
 </p>
+<a href="calculator.jsp">another calculation!</a>
 </body>
 </html>

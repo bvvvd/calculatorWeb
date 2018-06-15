@@ -16,4 +16,9 @@ public class CalculationHistoryService {
 
         return calculationHistoryDao.getHistoryForUserWithId(id);
     }
+
+    public void saveCalculationForUser(String expression, double result, String name) throws SQLException, ClassNotFoundException {
+        User user = userDao.getByUserName(name);
+        calculationHistoryDao.saveCalculationForUser(expression, result, user.getId());
+    }
 }

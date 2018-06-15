@@ -14,8 +14,6 @@
 
         user = userService.findUserByName(user.getName());
 
-//        String userRole = userService.getUserRole(user.getName());
-
         String userRole = user.getRole();
         if (userRole.equals("admin")) {
             request.getRequestDispatcher("adminUserHomePage.jsp").forward(request, response);
