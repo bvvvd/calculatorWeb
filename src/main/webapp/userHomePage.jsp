@@ -1,7 +1,7 @@
 <%@ page import="ru.spbu.models.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    User currentUser = (User) session.getAttribute("currentUser");
+    User currentUser = (User) request.getSession().getAttribute("currentUser");
 %>
 <html>
 <head>

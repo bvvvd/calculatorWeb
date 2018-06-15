@@ -69,4 +69,28 @@
         <servlet-name>DeleteUserServlet</servlet-name>
         <url-pattern>/deleteUser</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>ru.spbu.controllers.filters.SecurityFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/calculationHistory.jsp</url-pattern>
+        <url-pattern>/calculator.jsp</url-pattern>
+        <url-pattern>/changePassword.jsp</url-pattern>
+        <url-pattern>/deleteUser.jsp</url-pattern>
+        <url-pattern>/userHomePage.jsp</url-pattern>
+        <url-pattern>/adminUserHomePage.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>RoleFilter</filter-name>
+        <filter-class>ru.spbu.controllers.filters.RoleFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>RoleFilter</filter-name>
+        <url-pattern>/deleteUser.jsp</url-pattern>
+        <url-pattern>/adminUserHomePage.jsp</url-pattern>
+    </filter-mapping>
 </web-app>

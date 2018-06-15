@@ -9,7 +9,7 @@
 </head>
 <body>
     <%
-        User currentUser = (User) session.getAttribute("currentUser");
+        User currentUser = (User) request.getSession().getAttribute("currentUser");
         List<Calculation> historyForUser = new CalculationHistoryService().getHistoryForUser(currentUser);
 
         for (Calculation calculation : historyForUser) {

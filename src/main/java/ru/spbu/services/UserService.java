@@ -59,4 +59,8 @@ public class UserService {
     public void deleteUserWithName(String userNameToDelete) throws SQLException, ClassNotFoundException {
         userDao.delete(userNameToDelete);
     }
+
+    public User findUserByName(String userName) throws SQLException, ClassNotFoundException {
+        return userDao.getByUserName(userName);
+    }
 }

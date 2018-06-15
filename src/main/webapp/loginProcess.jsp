@@ -10,9 +10,13 @@
     try {
         UserService userService = new UserService();
         userService.checkPasswordForUser(user.getName(), user.getPassword());
-        session.setAttribute("currentUser", user);
+        request.getSession().setAttribute("currentUser", user);
 
-        String userRole = userService.getUserRole(user.getName());
+        user = userService.findUserByName(user.getName());
+
+//        String userRole = userService.getUserRole(user.getName());
+
+        String userRole = user.getRole();
         if (userRole.equals("admin")) {
             request.getRequestDispatcher("adminUserHomePage.jsp").forward(request, response);
         } else {

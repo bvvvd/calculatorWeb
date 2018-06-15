@@ -1,7 +1,7 @@
 <%@ page import="ru.spbu.models.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    User currentUser = (User) session.getAttribute("currentUser");
+    User currentUser = (User) request.getSession().getAttribute("currentUser");
 %>
 <html>
 <head>
@@ -22,7 +22,7 @@
     <input type="submit" value="change password"/>
 </form>
 
-<form action="LogoutServlet" method="get">
+<form action="/logout" method="get">
     <input type="submit" value="logout">
 </form>
 
