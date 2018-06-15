@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao implements Dao<User> {
@@ -16,8 +17,9 @@ public class UserDao implements Dao<User> {
     }
 
     @Override
-    public void getById(int id) {
+    public String getById(int id) {
 
+        return null;
     }
 
     @Override
@@ -26,13 +28,30 @@ public class UserDao implements Dao<User> {
     }
 
     @Override
-    public void delete(User user) {
-
+    public void delete(String user) throws SQLException, ClassNotFoundException {
+        Connection connection = ConnectionManager.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("delete from user where username = ?");
+        preparedStatement.setString(1, user);
+        preparedStatement.execute();
     }
 
     @Override
-    public List<User> getAll() {
-        return null;
+    public List<User> getAll() throws SQLException, ClassNotFoundException {
+        Connection connection = ConnectionManager.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("select * from users");
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        ArrayList<User> users = new ArrayList<>();
+
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String userName = resultSet.getString("username");
+            String password = resultSet.getString("password");
+            int role_id = resultSet.getInt("role_id");
+            users.add(new User(id, userName, password, role_id == 1 ? "admin" : "user"));
+        }
+
+        return users;
     }
 
     public User getByUserName(String login) throws SQLException, ClassNotFoundException {

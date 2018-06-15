@@ -8,9 +8,17 @@
 
 <%
     try {
-        new UserService().checkPasswordForUser(user.getName(), user.getPassword());
+        UserService userService = new UserService();
+        userService.checkPasswordForUser(user.getName(), user.getPassword());
         session.setAttribute("currentUser", user);
-        request.getRequestDispatcher("userHomePage.jsp").forward(request, response);
+
+        String userRole = userService.getUserRole(user.getName());
+        if (userRole.equals("admin")) {
+            request.getRequestDispatcher("adminUserHomePage.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("userHomePage.jsp").forward(request, response);
+        }
+
     } catch (WrongPasswordException | NoSuchUserException e) {
         request.setAttribute("error message", e.getMessage());
         request.getRequestDispatcher("loginUnsuccessful.jsp").forward(request, response);

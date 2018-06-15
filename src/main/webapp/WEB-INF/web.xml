@@ -51,4 +51,22 @@
         <servlet-name>RegistrationSuccessfulServlet</servlet-name>
         <url-pattern>/registrationSuccessful</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>ru.spbu.controllers.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <servlet-class>ru.spbu.controllers.DeleteUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <url-pattern>/deleteUser</url-pattern>
+    </servlet-mapping>
 </web-app>
