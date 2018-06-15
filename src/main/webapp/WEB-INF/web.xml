@@ -71,6 +71,15 @@
     </servlet-mapping>
 
     <filter>
+        <filter-name>CalculationRedirectFilter</filter-name>
+        <filter-class>ru.spbu.controllers.filters.CalculationRedirectFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CalculationRedirectFilter</filter-name>
+        <url-pattern>/calculator.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
         <filter-name>SecurityFilter</filter-name>
         <filter-class>ru.spbu.controllers.filters.SecurityFilter</filter-class>
     </filter>
@@ -78,7 +87,6 @@
         <filter-name>SecurityFilter</filter-name>
         <url-pattern>/calculationHistory.jsp</url-pattern>
         <url-pattern>/calculator.jsp</url-pattern>
-        <url-pattern>/changePassword.jsp</url-pattern>
         <url-pattern>/deleteUser.jsp</url-pattern>
         <url-pattern>/userHomePage.jsp</url-pattern>
         <url-pattern>/adminUserHomePage.jsp</url-pattern>
@@ -92,5 +100,14 @@
         <filter-name>RoleFilter</filter-name>
         <url-pattern>/deleteUser.jsp</url-pattern>
         <url-pattern>/adminUserHomePage.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>HomePageRedirectFilter</filter-name>
+        <filter-class>ru.spbu.controllers.filters.HomePageRedirectFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HomePageRedirectFilter</filter-name>
+        <url-pattern>/userHomePage.jsp</url-pattern>
     </filter-mapping>
 </web-app>

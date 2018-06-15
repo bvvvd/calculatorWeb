@@ -18,6 +18,7 @@
 <form action="/deleteUser" method="get">
     Delete user with name:<input type="text" name="userNameToDelete">
     <input type="submit" value="delete user" name="deleteUser">
+    <br><a href="userHomePage.jsp">go to home page</a>
 </form>
 </body>
 </html>

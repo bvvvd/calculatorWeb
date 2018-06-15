@@ -20,5 +20,6 @@
 
         out.print("that's all");
     %>
+<a href="userHomePage.jsp">go to home page</a>
 </body>
 </html>

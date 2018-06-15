@@ -22,9 +22,7 @@ public class RegistrationServlet extends HttpServlet {
             userService.createUser(login, password);
         } catch (UserAlreadyExistException e) {
             request.getRequestDispatcher("registrationUnsuccessful.jsp").forward(request, response);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

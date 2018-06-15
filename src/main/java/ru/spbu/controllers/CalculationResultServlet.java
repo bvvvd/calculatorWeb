@@ -21,8 +21,7 @@ public class CalculationResultServlet extends HttpServlet {
         try {
             result = CalculatorService.calculate(expression);
         } catch (IllegalExpressionException e) {
-            response.sendRedirect("nahooi");
-            e.printStackTrace();
+            response.sendRedirect("illegalExpression.jsp");
         }
 
         Object currentUser = request.getSession().getAttribute("currentUser");

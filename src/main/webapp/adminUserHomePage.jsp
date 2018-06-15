@@ -18,10 +18,6 @@
     <input type="submit" value="go to calculator"/>
 </form>
 
-<form action="changePassword.jsp">
-    <input type="submit" value="change password"/>
-</form>
-
 <form action="/logout" method="get">
     <input type="submit" value="logout">
 </form>

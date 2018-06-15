@@ -9,5 +9,6 @@
     <input type="password" name="password"  value="Password..." onclick="this.value=''"/><br/>
     <input type="submit" value="Login"/>
 </form>
+<a href="index.jsp">go to main page</a>
 </body>
 </html>
