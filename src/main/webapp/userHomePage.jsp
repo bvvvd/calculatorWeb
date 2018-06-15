@@ -22,7 +22,7 @@
     <input type="submit" value="change password"/>
 </form>
 
-<form action="LogoutServlet" method="get">
+<form action="/logout" method="get">
     <input type="submit" value="logout">
 </form>
 

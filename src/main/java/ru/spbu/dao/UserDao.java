@@ -30,7 +30,7 @@ public class UserDao implements Dao<User> {
     @Override
     public void delete(String user) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionManager.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("delete from user where username = ?");
+        PreparedStatement preparedStatement = connection.prepareStatement("delete from users where username = ?");
         preparedStatement.setString(1, user);
         preparedStatement.execute();
     }

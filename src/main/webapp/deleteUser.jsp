@@ -15,7 +15,7 @@
         out.print("<br>" + user.getName() + " " + user.getRole() + "</br>");
     }
 %>
-<form action="DeleteUserServlet" method="get">
+<form action="/deleteUser" method="get">
     Delete user with name:<input type="text" name="userNameToDelete">
     <input type="submit" value="delete user" name="deleteUser">
 </form>
