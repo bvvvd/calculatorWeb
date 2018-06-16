@@ -5,7 +5,6 @@ import ru.spbu.models.User;
 import ru.spbu.services.CalculationHistoryService;
 import ru.spbu.services.CalculatorService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,9 @@ public class CalculationResultServlet extends HttpServlet {
         try {
             result = CalculatorService.calculate(expression);
         } catch (IllegalExpressionException e) {
+            request.getSession().setAttribute("error", e);
             response.sendRedirect("illegalExpression.jsp");
+            return;
         }
 
         Object currentUser = request.getSession().getAttribute("currentUser");

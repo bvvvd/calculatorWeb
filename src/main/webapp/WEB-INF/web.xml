@@ -110,4 +110,20 @@
         <filter-name>HomePageRedirectFilter</filter-name>
         <url-pattern>/userHomePage.jsp</url-pattern>
     </filter-mapping>
+
+    <filter>
+        <filter-name>MainPageRedirectFilter</filter-name>
+        <filter-class>ru.spbu.controllers.filters.MainPageRedirectFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MainPageRedirectFilter</filter-name>
+        <url-pattern>/index.jsp</url-pattern>
+        <url-pattern>/login.jsp</url-pattern>
+        <url-pattern>/loginProcess.jsp</url-pattern>
+        <url-pattern>/loginUnsuccessful.jsp</url-pattern>
+        <url-pattern>/register.jsp</url-pattern>
+        <url-pattern>/registrationProcess.jsp</url-pattern>
+        <url-pattern>/registrationSuccessful.jsp</url-pattern>
+        <url-pattern>/registrationUnsuccessful.jsp</url-pattern>
+    </filter-mapping>
 </web-app>

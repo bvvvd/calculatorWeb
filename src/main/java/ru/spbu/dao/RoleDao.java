@@ -8,11 +8,6 @@ import java.util.List;
 
 public class RoleDao implements Dao{
     @Override
-    public void create(Object o) {
-
-    }
-
-    @Override
     public String getById(int id) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionManager.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement("select role_name from roles where id = ?");
@@ -20,6 +15,11 @@ public class RoleDao implements Dao{
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         return resultSet.getString("role_name");
+    }
+
+    @Override
+    public void create(Object o) {
+
     }
 
     @Override

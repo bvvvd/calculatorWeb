@@ -7,31 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalculationHistoryDao implements Dao<Calculation> {
-    @Override
-    public void create(Calculation calculation) {
-
-    }
-
-    @Override
-    public String getById(int id) {
-
-        return null;
-    }
-
-    @Override
-    public void update(Calculation calculation) {
-
-    }
-
-    @Override
-    public void delete(String calculation) {
-
-    }
-
-    @Override
-    public List<Calculation> getAll() {
-        return null;
-    }
 
     public List<Calculation> getHistoryForUserWithId(int userId) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionManager.getConnection();
@@ -60,5 +35,30 @@ public class CalculationHistoryDao implements Dao<Calculation> {
         preparedStatement.setDate(4, new Date(System.currentTimeMillis()));
 
         preparedStatement.execute();
+    }
+
+    @Override
+    public void create(Calculation calculation) {
+
+    }
+
+    @Override
+    public String getById(int id) {
+        return null;
+    }
+
+    @Override
+    public void update(Calculation calculation) {
+
+    }
+
+    @Override
+    public void delete(String calculation) {
+
+    }
+
+    @Override
+    public List<Calculation> getAll() {
+        return null;
     }
 }

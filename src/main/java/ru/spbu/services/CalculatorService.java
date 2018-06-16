@@ -119,8 +119,12 @@ public class CalculatorService {
     }
 
     public static double calculate(String expression) throws IllegalExpressionException {
-        List<String> polka = ExpressionParser.parse(expression);
-        
-        return new Ideone().calc(polka);
+        try {
+            List<String> polka = ExpressionParser.parse(expression);
+            return new Ideone().calc(polka);
+        } catch (NumberFormatException e) {
+            throw new IllegalExpressionException("illegal symbols in expression");
+        }
+
     }
 }

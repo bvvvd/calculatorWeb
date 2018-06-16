@@ -11,6 +11,7 @@ import java.util.List;
 public class CalculationHistoryService {
     private CalculationHistoryDao calculationHistoryDao = new CalculationHistoryDao();
     private UserDao userDao = new UserDao();
+
     public List<Calculation> getHistoryForUser(User currentUser) throws SQLException, ClassNotFoundException {
         int id = userDao.getByUserName(currentUser.getName()).getId();
 

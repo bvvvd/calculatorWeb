@@ -49,7 +49,7 @@ public class UserService {
     public String getUserRole(String name) throws SQLException, ClassNotFoundException {
         User user = userDao.getByUserName(name);
 
-        return roleDao.getById(user.getId());
+        return user.getRole();
     }
 
     public List<User> getAll() throws SQLException, ClassNotFoundException {

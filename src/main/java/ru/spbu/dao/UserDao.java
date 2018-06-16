@@ -12,22 +12,6 @@ import java.util.List;
 public class UserDao implements Dao<User> {
 
     @Override
-    public void create(User user) {
-
-    }
-
-    @Override
-    public String getById(int id) {
-
-        return null;
-    }
-
-    @Override
-    public void update(User user) {
-
-    }
-
-    @Override
     public void delete(String user) throws SQLException, ClassNotFoundException {
         Connection connection = ConnectionManager.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement("delete from users where username = ?");
@@ -87,5 +71,21 @@ public class UserDao implements Dao<User> {
         preparedStatement.setString(2, password);
 
         preparedStatement.execute();
+    }
+
+    @Override
+    public void create(User user) {
+
+    }
+
+    @Override
+    public String getById(int id) {
+
+        return null;
+    }
+
+    @Override
+    public void update(User user) {
+
     }
 }
