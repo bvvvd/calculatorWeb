@@ -24,6 +24,7 @@ public class HomePageRedirectFilter implements Filter {
             String userRole = new UserService().getUserRole(user.getName());
             if (userRole.equals("user")) {
                 chain.doFilter(req, resp);
+                return;
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
