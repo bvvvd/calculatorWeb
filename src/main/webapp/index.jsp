@@ -1,16 +1,14 @@
-<%@ page import="ru.spbu.services.CalculatorService" %>
-<%@ page import="ru.spbu.exception.IllegalExpressionException" %>
 <!DOCTYPE html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page isELIgnored="false" %>
-<%@ page session="true" %>
+<%@ page %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
     <div>
-        <h1>hello world</h1>
+        <h1>hello</h1>
     </div>
 </head>
 
@@ -22,11 +20,10 @@
 </form>
 
 <form name="register" method="get">
-    <a href="register.jsp" class="btn1">register</a>
-    <a href="login.jsp" class="btn2">login</a>
 </form>
 
 <%
+    request.setCharacterEncoding("UTF-8");
     String expression = request.getParameter("expression");
 
     if (expression != null) {

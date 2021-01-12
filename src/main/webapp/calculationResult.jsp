@@ -6,6 +6,6 @@
 <body>
 <p><%=request.getAttribute("result")%>
 </p>
-<a href="calculator.jsp">another calculation!</a>
+<a href="index.jsp">another calculation!</a>
 </body>
 </html>
