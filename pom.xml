@@ -18,6 +18,7 @@
                     <source>9</source>
                     <target>9</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
+                    <encoding>UTF-8</encoding>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
