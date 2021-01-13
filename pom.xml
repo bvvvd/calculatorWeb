@@ -25,9 +25,11 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <version>3.3.1</version>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <webXml>webapp\WEB-INF\web.xml</webXml>
+                    <warName>${project.artifactId}</warName>
+                    <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
         </plugins>
@@ -49,12 +51,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
         </dependency>
 
         <dependency>
